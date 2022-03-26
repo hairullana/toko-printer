@@ -1,5 +1,27 @@
 <?php
 
+session_start();
+require '../koneksi.php';
+
+if(isset($_SESSION['loginTokoPrinter'])){
+    header("Location: ../index.php");
+}
+
+if (isset($_POST['login'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $userCheck = mysqli_query($conn, "SELECT * FROM user WHERE username='$username' AND password='$password'");
+
+    if (mysqli_num_rows($userCheck) == 1){
+        $_SESSION['loginTokoPrinter'] = $username;
+        header('Location: ../index.php');
+    }else {
+        echo "<script>
+            alert('username atau password salah')
+        </script>";
+    }
+}
 
 ?>
 <!DOCTYPE html>
