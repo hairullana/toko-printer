@@ -1,0 +1,94 @@
+body{
+    background-image: url(draw1.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position-y:top;
+
+
+}
+.container-box{
+    background: white;
+    width: 400px;
+    height: 300px;
+    margin: 0px auto;
+    margin-top: 120px;
+    border-radius: 8px;
+    padding: 50px;
+    box-shadow: -1px 6px 21px -8px rgba(20,17,17,0.71);
+    -webkit-box-shadow: -1px 6px 21px -8px rgba(20,17,17,0.71);
+    -moz-box-shadow: -1px 6px 21px -8px rgba(20,17,17,0.71);
+}
+
+.form-control{
+    width: 200px;
+    height: 13%;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+    outline: orange;
+    border: 2px solid orange;
+    box-shadow: -1px 3px 14px -8px rgba(20,17,17,0.71);
+    -webkit-box-shadow: -1px 3px 14px -8px rgba(20,17,17,0.71);
+    -moz-box-shadow: -1px 3px 14px -8px rgba(20,17,17,0.71);
+}
+
+button {
+    width: 120px;
+    height: 30px;
+    margin: 2px 10px;
+    border: 2px solid orange;
+    border-radius: 8px;
+    padding: 0px 24px;
+    font-size: 1.15em;
+    color: orange;
+    background-color: white;
+    transition: all 0.25s ease-in-out;
+      
+}
+.button:hover {
+    background-color: orange;
+    border-color: orange;
+    color: white;
+  }
+.button:active {
+    background-color: orange;
+    border-color: orange;
+    color: white;
+    box-shadow: none;
+  }
+.button:focus, .button:active:focus {
+    background-color: orange;
+    border-color: orange;
+    color: white;
+    outline: 5px auto orange;
+  }
+.button:visited {
+    background-color: orange;
+    border-color: orange;
+  }
+  
+h3 {
+    text-align: center;
+    margin-top: 5px;
+    color: orange;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h4 {
+    margin: 20px 2px;
+    text-decoration: none;
+    color:black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color:orange;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.img {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    margin-right: 2px;
+    margin-top: 0px;
+}

@@ -1,0 +1,122 @@
+*{
+    font-family: 'Poppins';
+}
+
+  .sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: orange;
+  } 
+  .main {
+    margin-left: 160px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+.sidenav h3 {
+    text-align: center;
+    font-size: 20px;
+    color: orange;
+}
+h1{
+    text-align: center;
+    
+}
+h4{
+    text-align:center;
+}
+.log{
+    margin-left: 10px;
+    margin-top: 250px;
+    cursor: pointer;
+    background-color: #111;
+    border: none ;
+    color: #818181;
+    font-size: 20px;
+    display: block;
+}
+.log:hover{
+    color: orange;
+}
+.card-body{
+    width: 300px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53);
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53);
+    margin-left: 250px;
+    margin-top: 50px;
+    
+}
+.card-body h1{
+    position: relative;
+    font-size: 40px;
+    right: 90px;
+}
+.card-body p{
+    position: relative;
+    left: 50px;
+    top: 20px;
+}
+.card-body-center{
+    width: 300px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53);
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53);
+    margin-left: 600px;
+    position: relative;
+    bottom: 165px;
+    
+}
+.card-body-center h1{
+    position: relative;
+    font-size: 40px;
+    right: 90px;
+}
+.card-body-center p{
+    position: relative;
+    left: 50px;
+    top: 20px;
+}
+.card-body-right{
+    width: 300px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53);
+    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53);
+    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.53);
+    margin-left: 1000px;
+    position: relative;
+    bottom: 332px;
+    
+}
+.card-body-right h1{
+    position: relative;
+    font-size: 40px;
+    right: 90px;
+}
+.card-body-right p{
+    position: relative;
+    left: 50px;
+    top: 20px;
+}
