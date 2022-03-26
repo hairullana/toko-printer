@@ -1,6 +1,14 @@
 <?php
 
+require "koneksi.php";
 
+if(!isset($_GET['id'])){
+    header('Location: index.php');
+}
+
+$id = $_GET['id'];
+$product = mysqli_query($conn, "SELECT * FROM products WHERE id='$id'");
+$product = mysqli_fetch_assoc($product);
 
 ?>
 
@@ -14,12 +22,12 @@
 <?php include 'layout/navbar.php'; ?>
 
 <div class="list-card-detail">
-    <img src="foto/printer1.png" alt="print" class="foto-detail">
+    <img src="foto/<?= $product['id'] ?>.png" alt="print" class="foto-detail">
     <div class="list-card-detail-product">
-        <h3>Printer Canon MP830</h3>
-        <p>Printer Bagus dan mahal orang susah gabisa beli ini bahkan sisca kol puyeng </p>
-        <p>Rp. 290.000.00</p>
-        <a href="cart.php"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang</button></a>
+        <h3><?= $product['name'] ?></h3>
+        <p><?= $product['description'] ?></p>
+        <p>Rp. <?= number_format($product['price']) ?></p>
+        <a href="cart.php?id=<?= $product['id'] ?>"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang</button></a>
         <a href="produk.php"><button type="submit" class="detail">Lihat produk lainnya </button></a>
     </div>
 </div>
