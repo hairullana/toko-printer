@@ -1,9 +1,9 @@
 <?php
 
 session_start();
+require 'koneksi.php';
 
-
-
+$products = mysqli_query($conn, 'SELECT * FROM products');
 
 ?>
 <!DOCTYPE html>
@@ -17,18 +17,21 @@ session_start();
     <div class="container">
         <h2 class="text-product">Produk Kami</h2><hr>
     </div>
-    <div class="card-product">
-        <div class="product">
-            <a href="detail.php">
-                <img src="foto/printer1.png" class="foto-product" alt="">
-            </a>
-            <div class="price">
-            <h3>Printer Canon MP830</h3>
-            <p>Rp. 290.000.00</p>
-            <a href="cart.php"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang </button></a>
-            <a href="detail.php"><button type="submit" name="detail" class="detail">Lihat Produk </button></a>
+    
+    <?php foreach ($products as $product): ?>
+        <div class="card-product">
+            <div class="product">
+                <a href="detail.php?id=<?= $product['id'] ?>">
+                    <img src="foto/<?= $product['id'] ?>.png" class="foto-product" alt="">
+                </a>
+                <div class="price">
+                <h3><?= $product['name'] ?></h3>
+                <p>Rp. <?= number_format($product['price']) ?></p>
+                <a href="cart.php"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang </button></a>
+                <a href="detail.php"><button type="submit" name="detail" class="detail">Lihat Produk </button></a>
+                </div>
             </div>
         </div>
-    </div>
+    <?php endforeach; ?>
 </body>
 </html>

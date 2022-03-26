@@ -11,10 +11,10 @@
 <link rel="shortcut icon" href="printer.png" type="image/x-icon">
 <title>Detail - Toko Printer</title>
 <body>      
-<?php include '../layout/navbar.php'; ?>
+<?php include 'layout/navbar.php'; ?>
 
 <div class="list-card-detail">
-    <img src="../foto/printer1.png" alt="print" class="foto-detail">
+    <img src="foto/printer1.png" alt="print" class="foto-detail">
     <div class="list-card-detail-product">
         <h3>Printer Canon MP830</h3>
         <p>Printer Bagus dan mahal orang susah gabisa beli ini bahkan sisca kol puyeng </p>
