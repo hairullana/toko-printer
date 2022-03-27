@@ -25,9 +25,9 @@ $carts = mysqli_query($conn, "SELECT *, COUNT(*) as total FROM carts INNER JOIN 
 <?php include 'layout/navbar.php'; ?>
 <div class="container-cart">
 <h2>Keranjang saya</h2>
-<?php $totalPrice = 0; ?>
+<?php $totalPrice = 0; $total = 0; ?>
 <?php foreach($carts as $product): ?>
-    <?php $totalPrice += $product['price'] ?>
+    <?php $totalPrice += $product['price']*$product['total']; $total += $product['total'] ?>
     <div class="cart-body">
         <img src="foto/<?= $product['id_product'] ?>.png" class="cart-img">
     </div>
@@ -40,7 +40,7 @@ $carts = mysqli_query($conn, "SELECT *, COUNT(*) as total FROM carts INNER JOIN 
 <?php endforeach; ?>
 <div class="total-body">
     <p>Total Price : Rp. <?= $totalPrice ?></p>
-    <p>Jumlah Item : 1 </p><hr>
+    <p>Jumlah Item : <?= $total ?> </p><hr>
     <a href="checkout.php"><button type="submit" name="checkout" class="cek">Proses to Checkout !</button></a>
 </div>
 </div>
