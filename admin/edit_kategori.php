@@ -19,6 +19,8 @@ if(isset($_POST['edit'])){
 
     mysqli_query($conn, "UPDATE categories SET name='$name' WHERE id=$idCategory");
 
+    echo "<script>alert('berhasil')</script>";
+
     header("Location: kategori.php");
 }
 
