@@ -57,7 +57,7 @@ if (isset($_POST['search2'])){
                     <div class="price-product">
                     <h3><?= $product['name'] ?></h3>
                     <p>Rp. <?= number_format($product['price']) ?></p>
-                    <a href="cart.php"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang </button></a>
+                    <a href="add-to-cart.php?id=<?= $product['id'] ?>"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang </button></a>
                     <a href="detail.php"><button type="submit" name="detail" class="detail">Lihat Produk </button></a>
                     </div>
                 </div>
