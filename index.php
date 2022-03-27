@@ -19,17 +19,14 @@ $products = mysqli_query($conn, 'SELECT * FROM products');
     </div>
     
     <?php foreach ($products as $product): ?>
-        <div class="card-product">
-            <div class="product">
-                <a href="detail.php?id=<?= $product['id'] ?>">
-                    <img src="foto/<?= $product['id'] ?>.png" class="foto-product" alt="">
-                </a>
-                <div class="price">
+        <div class="list-card-detail">
+            <img src="foto/<?= $product['id'] ?>.png" alt="print" class="foto-detail">
+            <div class="list-card-detail-product">
                 <h3><?= $product['name'] ?></h3>
+                <p><?= $product['description'] ?></p>
                 <p>Rp. <?= number_format($product['price']) ?></p>
-                <a href="add-to-cart.php?id=<?= $product['id'] ?>"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang </button></a>
-                <a href="detail.php?id=<?= $product['id'] ?>"><button type="submit" name="detail" class="detail">Lihat Produk </button></a>
-                </div>
+                <a href="add-to-cart.php?id=<?= $product['id'] ?>"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang</button></a>
+                <a href="produk.php"><button type="submit" class="detail">Lihat produk lainnya </button></a>
             </div>
         </div>
     <?php endforeach; ?>
