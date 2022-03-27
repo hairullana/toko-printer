@@ -19,8 +19,9 @@ if(isset($_POST['edit'])){
     $name = $_POST['name'];
     $price = $_POST['price'];
     $description = $_POST['description'];
+    $category = $_POST['category'];
 
-    mysqli_query($conn, "UPDATE products SET name='$name', price=$price, description='$description' WHERE id=$id");
+    mysqli_query($conn, "UPDATE products SET name='$name', price=$price, description='$description', id_category=$category WHERE id=$id");
     echo "<script>alert('berhasil')</script>";
 
     header("Location: produk.php");
@@ -41,6 +42,15 @@ if(isset($_POST['edit'])){
                 <p><input type="text" name="name" value="<?= $product['name'] ?>"></p>
                 <p><input type="number" name="price" value="<?= $product['price'] ?>"></p>
                 <p><textarea name="description"><?= $product['description'] ?></textarea></p>
+                <p>Kategori:
+                    <select name="category">
+                        <?php
+                        foreach (mysqli_query($conn, "SELECT * FROM categories") as $c):
+                        ?>
+                        <option value="<?= $c['id'] ?>"><?= $c['name'] ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </p>
                 
                 <button type="submit" name="edit">Edit</button>
             </form>
