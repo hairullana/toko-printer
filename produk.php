@@ -41,6 +41,7 @@ if (isset($_POST['search2'])){
                 <?php endforeach; ?>
             </select>
             <button type="submit" class="cari" name="search2">Cari</button>
+                </form>
         </div>  
         <?php if (isset($_POST['search'])): ?>
             <h3 style="text-align: center;">menampilkan hasil pencarian "<?= $_POST['search']    ?>"</h3>
@@ -49,19 +50,16 @@ if (isset($_POST['search2'])){
             <h3 style="text-align: center;">menampilkan kategori "<?= mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM categories WHERE id=$id"))['name'] ?>"</h3>
         <?php endif ?>
         <?php foreach ($products as $product): ?>
-            <div class="body-product">
-                <div class="product">
-                    <a href="detail.php">
-                        <img src="foto/<?= $product['id'] ?>.png" class="foto-product" alt="">
-                    </a>
-                    <div class="price-product">
+            <div class="list-card-detail">
+                <img src="foto/<?= $product['id'] ?>.png" alt="print" class="foto-detail">
+                <div class="list-card-detail-product">
                     <h3><?= $product['name'] ?></h3>
+                    <p><?= $product['description'] ?></p>
                     <p>Rp. <?= number_format($product['price']) ?></p>
-                    <a href="add-to-cart.php?id=<?= $product['id'] ?>"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang </button></a>
-                    <a href="detail.php"><button type="submit" name="detail" class="detail">Lihat Produk </button></a>
-                    </div>
+                    <a href="add-to-cart.php?id=<?= $product['id'] ?>"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang</button></a>
+                    <a href="produk.php"><button type="submit" class="detail">Lihat produk lainnya </button></a>
                 </div>
-            </div> <br> <br> <br>
+            </div>
         <?php endforeach; ?>
 </body>
 </html>
