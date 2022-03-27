@@ -1,6 +1,22 @@
 <?php
 
+session_start();
+require '../koneksi.php';
 
+if(isset($_SESSION['loginTokoSepatu'])){
+    header("Location: ../index.php");
+}
+
+if(isset($_POST['register'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $name = $_POST['name'];
+    // var_dump($_POST);die;
+
+    mysqli_query($conn, "INSERT INTO user  VALUES('', '$name', '$username', '$password', 'customers')");
+    echo "<script>alert('berhasil mendaftar')</script>";
+    header("Location: ../login/index.php");
+}
 
 
 
