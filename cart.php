@@ -12,7 +12,7 @@ $user = mysqli_query($conn, "SELECT * FROM user WHERE username='$username'");
 $user = mysqli_fetch_assoc($user);
 $idUser = $user['id_user'];
 
-$carts = mysqli_query($conn, "SELECT * FROM carts INNER JOIN products ON carts.id_product = products.id WHERE carts.id_user=$idUser");
+$carts = mysqli_query($conn, "SELECT *, COUNT(*) as total FROM carts INNER JOIN products ON carts.id_product = products.id WHERE carts.id_user=$idUser GROUP BY products.id");
 // var_dump($carts);die;
 
 ?>
@@ -34,7 +34,7 @@ $carts = mysqli_query($conn, "SELECT * FROM carts INNER JOIN products ON carts.i
     <div class="text-cart">
         <h3><?= $product['name'] ?></h3>
         <p>Rp.<?= number_format($product['price']) ?></p>
-        <p class="product-quantity"> Jumlah : <a href="kurangBarang.php"><button class="quantity-button">-</button></a>1<a href="TambahBarang.php"><button class="quantity-button">+</button></a></p>
+        <p class="product-quantity"> Jumlah : <a href="kurangBarang.php"><button class="quantity-button">-</button></a><?= $product['total'] ?><a href="TambahBarang.php"><button class="quantity-button">+</button></a></p>
         <a href="hapusBarang.php"><button type="submit" name="hapus" class="remove">Hapus</button></a>
     </div>
 <?php endforeach; ?>

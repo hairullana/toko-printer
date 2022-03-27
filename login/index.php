@@ -15,7 +15,11 @@ if (isset($_POST['login'])){
 
     if (mysqli_num_rows($userCheck) == 1){
         $_SESSION['loginTokoPrinter'] = $username;
-        header('Location: ../index.php');
+        if($username == 'admin'){
+            header('Location: ../admin/index.php');
+        }else {
+            header('Location: ../index.php');
+        }
     }else {
         echo "<script>
             alert('username atau password salah')

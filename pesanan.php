@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 
 ?>
 
@@ -11,7 +11,7 @@
 <title>Pesanan - Toko Printer</title>
 <body>
       
-<?php include '../layout/navbar.php'; ?>
+<?php include 'layout/navbar.php'; ?>
 <table class="styled-table">
     <thead>
         <tr>
