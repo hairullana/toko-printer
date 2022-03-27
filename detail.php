@@ -27,7 +27,7 @@ $product = mysqli_fetch_assoc($product);
         <h3><?= $product['name'] ?></h3>
         <p><?= $product['description'] ?></p>
         <p>Rp. <?= number_format($product['price']) ?></p>
-        <a href="cart.php?id=<?= $product['id'] ?>"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang</button></a>
+        <a href="add-to-cart.php?id=<?= $product['id'] ?>"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang</button></a>
         <a href="produk.php"><button type="submit" class="detail">Lihat produk lainnya </button></a>
     </div>
 </div>
