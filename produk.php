@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+require 'koneksi.php';
+
+$products = mysqli_query($conn, "SELECT * FROM products");
 
 ?>
 <!DOCTYPE html>
@@ -8,7 +12,7 @@
 <title>Produk - Toko Printer</title>
 <body>
       
-<?php include '../layout/navbar.php'; ?>
+<?php include 'layout/navbar.php'; ?>
 <div class="container">
 	<div class="row" id="search">
 		<form id="search-form" action="" method="POST" enctype="multipart/form-data">
@@ -28,18 +32,20 @@
             </select>
             <button type="submit" class="cari">Cari</button>
         </div>
-<div class="body-product">
-        <div class="product">
-            <a href="detail.php">
-                <img src="../foto/printer1.png" class="foto-product" alt="">
-            </a>
-            <div class="price-product">
-            <h3>Printer Canon MP830</h3>
-            <p>Rp. 290.000.00</p>
-            <a href="cart.php"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang </button></a>
-            <a href="detail.php"><button type="submit" name="detail" class="detail">Lihat Produk </button></a>
+    <div class="body-product">
+        <?php foreach ($products as $product): ?>
+            <div class="product">
+                <a href="detail.php">
+                    <img src="foto/<?= $product['id'] ?>.png" class="foto-product" alt="">
+                </a>
+                <div class="price-product">
+                <h3><?= $product['name'] ?></h3>
+                <p>Rp. <?= number_format($product['price']) ?></p>
+                <a href="cart.php"><button type="submit" name="addToCart" class="add-cart">Masukan Keranjang </button></a>
+                <a href="detail.php"><button type="submit" name="detail" class="detail">Lihat Produk </button></a>
+                </div>
             </div>
-        </div>
+        <?php endforeach; ?>
     </div> <br> <br> <br>
 </body>
 </html>
