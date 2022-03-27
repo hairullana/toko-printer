@@ -51,16 +51,16 @@ foreach ($carts as $cart){
             <input type="number" name="postcode" placeholder="Kode Pos" class="form-kd"><br>
             
             <label for="">Pembayaran</label><br>
-            <input type="radio" name="payment" class="ckbox"><span>COD</span>
-            <input type="radio" name="payment" class="ckbox"><span>DANA</span>
-            <input type="radio" name="payment" class="ckbox"><span>OVO</span>
-            <input type="radio" name="payment" class="ckbox"><span>GoPay</span> <br>
+            <input type="radio" name="payment" value="COD" class="ckbox"><span>COD</span>
+            <input type="radio" name="payment" value="DANA" class="ckbox"><span>DANA</span>
+            <input type="radio" name="payment" value="OVO" class="ckbox"><span>OVO</span>
+            <input type="radio" name="payment" value="Gopay" class="ckbox"><span>GoPay</span> <br>
 
             <label for="">Kurir</label><br>
-            <input type="radio" name="courier" class="ckbox"><span>Instan</span>
-            <input type="radio" name="courier" class="ckbox"><span>Premium</span>
-            <input type="radio" name="courier" class="ckbox"><span>Ekonomi</span>
-            <input type="radio" name="courier" class="ckbox"><span>Reguler</span>
+            <input type="radio" name="courier" value="Instan" class="ckbox"><span>Instan</span>
+            <input type="radio" name="courier" value="Premium" class="ckbox"><span>Premium</span>
+            <input type="radio" name="courier" value="Ekonomi" class="ckbox"><span>Ekonomi</span>
+            <input type="radio" name="courier" value="Reguler" class="ckbox"><span>Reguler</span>
         </div>
         <div class="total-body">
             <p>Total Harga : Rp. <?= number_format($totalPayment) ?></p>

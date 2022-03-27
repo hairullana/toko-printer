@@ -7,6 +7,7 @@ if (!isset($_SESSION['loginTokoPrinter']) || !isset($_GET['id'])){
   header("Location: index.php");
 }
 
+
 $idProduct = $_GET['id'];
 if(mysqli_num_rows(mysqli_query($conn, "SELECT * FROM products WHERE id=$idProduct")) == 0){
   header("Location: index.php");
