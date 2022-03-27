@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2022 at 08:27 AM
+-- Generation Time: Mar 27, 2022 at 02:32 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.20
 
@@ -38,9 +38,12 @@ CREATE TABLE `carts` (
 --
 
 INSERT INTO `carts` (`id`, `id_user`, `id_product`) VALUES
-(1, 2, 1),
-(2, 2, 1),
-(3, 2, 1);
+(25, 2, 1),
+(26, 2, 1),
+(27, 2, 1),
+(28, 2, 1),
+(29, 2, 1),
+(30, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -65,6 +68,36 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `address` text NOT NULL,
+  `kecamatan` varchar(64) NOT NULL,
+  `kelurahan` varchar(64) NOT NULL,
+  `phone` varchar(64) NOT NULL,
+  `postcode` varchar(64) NOT NULL,
+  `payment` varchar(64) NOT NULL,
+  `courier` varchar(64) NOT NULL,
+  `status` varchar(64) NOT NULL,
+  `info` varchar(64) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orders`
+--
+
+INSERT INTO `orders` (`id`, `id_user`, `id_product`, `address`, `kecamatan`, `kelurahan`, `phone`, `postcode`, `payment`, `courier`, `status`, `info`) VALUES
+(1, 2, 1, 'ffewfef', 'fefe', 'eff', 'fefwe', '80871', 'DANA', 'Premium', 'Selesai', 'C'),
+(2, 2, 1, '', '', '', '', '', 'DANA', 'Premium', 'Selesai', 'B'),
+(3, 2, 1, '', '', '', '', '', 'DANA', 'Premium', 'Selesai', 'B');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `products`
 --
 
@@ -81,7 +114,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `description`, `id_category`) VALUES
-(1, 'Printer Canon MP830', 300000, 'Printer Bagus dan mahal orang susah gabisa beli ini bahkan sisca kol puyeng', 0);
+(1, 'Printer Canon MP830', 300000, 'Printer Bagus dan mahal orang susah gabisa beli ini bahkan sisca kol puyeng', 3),
+(3, 'w', 11, '1', 1),
+(4, 'e2e', 11, '12e2e', 2);
 
 -- --------------------------------------------------------
 
@@ -122,6 +157,12 @@ ALTER TABLE `categories`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -141,7 +182,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -150,10 +191,16 @@ ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `user`
