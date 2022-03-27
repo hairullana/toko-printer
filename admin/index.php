@@ -7,8 +7,7 @@ if(!isset($_SESSION['loginTokoPrinter']) || $_SESSION['loginTokoPrinter'] != 'ad
      header("Location: ../index.php");
 }
 
-// $totalOrder = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM orders"));
-$totalOrder = 0;
+$totalOrder = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM orders"));     
 $totalProduct = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM products"));
 $totalCategory = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM categories"));
 

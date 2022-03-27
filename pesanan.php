@@ -10,7 +10,7 @@ if(!isset($_SESSION['loginTokoPrinter'])){
 $username = $_SESSION['loginTokoPrinter'];
 $user = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM user WHERE username='$username'"));
 $idUser = $user['id_user'];
-$orders = mysqli_query($conn, "SELECT *, COUNT(*) as total FROM orders WHERE id_user=$idUser GROUP BY id_product, payment, courier, status, info");
+$orders = mysqli_query($conn, "SELECT *, COUNT(*) as total FROM orders WHERE id_user=$idUser GROUP BY id_product, payment, courier, status");
 
 ?>
 
@@ -31,9 +31,8 @@ $orders = mysqli_query($conn, "SELECT *, COUNT(*) as total FROM orders WHERE id_
             <th>Harga Barang (1 Produk)</th>
             <th>Total Bayar</th>
             <th>Pembayaran</th>
-            <th>Status</th>
             <th>Kurir</th>
-            <th>Info</th>
+            <th>Status</th>
         </tr>
     </thead>
     <tbody>
@@ -46,9 +45,8 @@ $orders = mysqli_query($conn, "SELECT *, COUNT(*) as total FROM orders WHERE id_
             <td><?= number_format($product['price']) ?></td>
             <td><?= number_format($order['total']*$product['price']) ?></td>
             <td><?= $order['payment'] ?></td>
-            <td><?= $order['status'] ?></td>
             <td><?= $order['courier'] ?></td>
-            <td><?= $order['info'] ?></td>
+            <td><?= $order['status'] ?></td>
         </tr>
         <?php endforeach; ?>
     </tbody>
